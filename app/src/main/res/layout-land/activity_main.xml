@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:weightSum="13"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical">
+
+            <com.example.rafal.tetris.Painting
+                android:layout_width="251dp"
+                android:layout_height="match_parent"
+                android:id="@+id/gamePanel"
+                android:background="@drawable/border_background"
+                android:layout_marginBottom="10dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.62"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:elevation="20dp"
+                android:background="@drawable/border_background"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.2"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next:"
+                    android:textSize="32sp"
+                    android:textColor="#9FFFFFFF"/>
+
+                <com.example.rafal.tetris.SecondPiece
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/nextPiecePanel"
+                    android:layout_weight="0.65" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:elevation="20dp"
+                android:background="@drawable/border_background"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="0.08">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#9FFFFFFF"
+                    android:text="Level:"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="#CCFFFFFF"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:id="@+id/level"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <!--  <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="0dp"
+                  android:orientation="vertical"
+                  android:background="@drawable/border_background"
+                  android:elevation="20dp"
+                  android:layout_marginBottom="10dp"
+                  android:layout_weight="0.2">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textColor="#9FFFFFFF"
+                      android:textSize="32sp"
+                      android:text="Rows:"/>
+                  <TextView
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="0"
+                      android:textColor="#CCFFFFFF"
+                      android:id="@+id/rows"
+                      android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                      android:textSize="64sp"
+                      android:textAlignment="center" />
+
+              </LinearLayout>
+              -->
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="20dp">
+
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+                android:id="@+id/resetButton"
+                style="@style/button"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="53dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.04"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:elevation="20dp"
+                android:background="@drawable/border_background"
+                android:layout_marginBottom="10dp"
+                android:layout_height="57dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#9FFFFFFF"
+                    android:text="Score:"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="#9FFFFFFF"
+                    android:text="0"
+                    android:id="@+id/score"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="5"
+                android:orientation="vertical">
+
+                <ImageButton
+                    style="@style/button"
+                    android:layout_height="30dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/left"
+                    android:id="@+id/leftButton"
+                    android:layout_weight="0.98"
+                    android:layout_width="47dp" />
+
+                <ImageButton
+                    style="@style/button"
+                    android:layout_width="47dp"
+                    android:src="@drawable/ccw"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/rotateLeft"
+                    android:layout_weight="0.86"
+                    android:layout_height="30dp" />
+
+                <ImageButton
+                    style="@style/button"
+                    android:src="@drawable/down"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/downButton"
+                    android:layout_height="30dp"
+                    android:layout_weight="0.98"
+                    android:layout_width="47dp" />
+
+                <ImageButton
+                    style="@style/button"
+                    android:src="@drawable/cw"
+                    android:scaleType="fitCenter"
+                    android:id="@+id/rotateR"
+                    android:layout_height="30dp"
+                    android:layout_weight="0.74"
+                    android:layout_width="47dp" />
+
+                <ImageButton
+                    style="@style/button"
+                    android:layout_width="47dp"
+                    android:layout_height="33dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/right"
+                    android:id="@+id/rightButton"
+                    android:layout_weight="0.61" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
